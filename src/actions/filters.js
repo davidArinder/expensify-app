@@ -4,24 +4,24 @@ export const setTextFilter = (text = '') => ({
     text
 })
 
-// Sort By Amount action generator
-export const sortByAmount = () => ({
-    type: 'SORT_BY_AMOUNT'
-})
-
 // Sort By Date action generator
 export const sortByDate = () => ({
     type: 'SORT_BY_DATE'
 })
 
+// Sort By Amount action generator
+export const sortByAmount = () => ({
+    type: 'SORT_BY_AMOUNT'
+})
+
 // Set Start Date action generator
-export const setStartDate = (date) => ({
+export const setStartDate = (startDate) => ({
     type: 'SET_START_DATE',
-    date
+    startDate
 })
 
 // Set End Date action generator
-export const setEndDate = (date) => ({
+export const setEndDate = (endDate) => ({
     type: 'SET_END_DATE',
-    date
+    endDate
 })
