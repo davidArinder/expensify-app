@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux' // connects component to redux store
-import expenseListItem from './ExpenseListItem'
 import ExpenseListItem from './ExpenseListItem'
+import selectExpenses from '../selectors/expenses'
 
 // react-redux makes component reactive. it will re-run when updates occur
 const ExpenseList = (props) => (
@@ -15,8 +15,7 @@ const ExpenseList = (props) => (
 
 const mapStateToProps = (state) => {
     return {
-        expenses: state.expenses,
-        filters: state.filters
+        expenses: selectExpenses(state.expenses, state.filters)
     }
 }
 
