@@ -57,7 +57,7 @@ export default class ExpenseForm extends React.Component {
             this.props.onSubmit({ // this onSubmit prop created on AddExpensePage.js
                 description: this.state.description,
                 amount: parseFloat(this.state.amount, 10) * 100, // convert amount string to decimal then multiply from cents to dollars
-                createAt: this.state.createdAt.valueOf(), // converts timestamp
+                createdAt: this.state.createdAt.valueOf(), // converts timestamp
                 note: this.state.note
             })
         }
@@ -80,7 +80,7 @@ export default class ExpenseForm extends React.Component {
                         value={this.state.amount}
                         onChange={this.onAmountChange}
                     />
-                        <SingleDatePicker /* settings determined by react-dates */
+                    <SingleDatePicker /* settings determined by react-dates */
                         date={this.state.createdAt}
                         onDateChange={this.onDateChange}
                         focused={this.state.calendarFocused}
