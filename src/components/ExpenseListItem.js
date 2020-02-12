@@ -15,4 +15,4 @@ const ExpenseListItem = ({ description, amount, createdAt, id }) => (
 
 
 
-export default ExpenseListItem // connect gives access to dispatch
+export default ExpenseListItem

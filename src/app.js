@@ -10,6 +10,7 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
 const store = configureStore()
+console.log('test')
 
 store.dispatch(addExpense({ description: 'Water bill', amount: 4500 }))
 store.dispatch(addExpense({ description: 'Gas bill', createdAt: 1000 }))
