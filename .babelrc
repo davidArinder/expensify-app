@@ -1,0 +1,10 @@
+{
+    "presets": [
+        "env",
+         "react"
+        ],
+    "plugins": [
+        "transform-class-properties", // allows us to customize how we use classes in app, helps with this binding
+        "transform-object-rest-spread"
+    ]
+}

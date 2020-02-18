@@ -1,4 +1,4 @@
 node_modules
 src/playground
-.babelrc
+# .babelrc
 public/dist/
