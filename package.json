@@ -27,6 +27,7 @@
     "enzyme-to-json": "3.0.1",
     "express": "4.15.4",
     "extract-text-webpack-plugin": "3.0.0",
+    "firebase": "^7.9.0",
     "global": "^4.4.0",
     "moment": "2.18.1",
     "node-sass": "^4.13.0",
