@@ -24,12 +24,16 @@ database.ref().set({
         city: 'Everett',
         country: 'United States'
     }
+}).then(() => {
+    console.log('data is saved')
+}).catch((e) => {
+    console.log('this failed', e)
 })
 
-// database.ref().set('This is my data')
-database.ref('age').set(32)
-database.ref('location/city').set('Detroit')
-database.ref('attributes').set({
-    height: 70,
-    weight: 230
-})
+database.ref('isSingle').set(null) // one way to delete in firebase
+
+// database.ref('isSingle').remove().then(() => { // another way to delete in firebase
+//     console.log('Removed worked')
+// }).catch((e) => {
+//     console.log('Remove failed: ',)
+// })
