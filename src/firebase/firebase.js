@@ -16,6 +16,40 @@ const firebaseConfig = {
 
 const database = firebase.database() // turn the call command into a variable for ease of use
 
+database.ref().on('value', (snapshot) => {
+    const val = snapshot.val()
+    console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`)
+})
+
+
+// const onValueChange = database.ref().on('value', (snapshot) => {
+//     console.log(snapshot.val())
+// }, (e) => {
+//     console.log('Error with data fetching', e)
+// })
+
+// setTimeout(() => {
+//     database.ref('age').set(33)
+// }, 3500)
+
+// setTimeout(() => {
+//     database.ref().off(onValueChange)
+// }, 7000)
+
+// setTimeout(() => {
+//     database.ref('age').set(30)
+// }, 10500)
+
+// database.ref('location/city')
+//     .once('value')
+//     .then((snapshot) => {
+//         const val = snapshot.val()
+//         console.log(val)
+//     })
+//     .catch((e) => {
+//         console.log('Error: ', e)
+//     })
+
 // database.ref().set({
 //     name: 'david',
 //     age: 31,
