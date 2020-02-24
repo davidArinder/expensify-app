@@ -16,21 +16,31 @@ const firebaseConfig = {
 
 const database = firebase.database() // turn the call command into a variable for ease of use
 
-database.ref().set({
-    name: 'david',
-    age: 31,
-    isSingle: false,
-    location: {
-        city: 'Everett',
-        country: 'United States'
-    }
-}).then(() => {
-    console.log('data is saved')
-}).catch((e) => {
-    console.log('this failed', e)
-})
+// database.ref().set({
+//     name: 'david',
+//     age: 31,
+//     stressLevel: 7,
+//     job: {
+//         title: 'data analyst',
+//         company: 'HCL'
+//     },
+//     location: {
+//         city: 'Everett',
+//         country: 'United States'
+//     }
+// }).then(() => {
+//     console.log('data is saved')
+// }).catch((e) => {
+//     console.log('this failed', e)
+// })
 
-database.ref('isSingle').set(null) // one way to delete in firebase
+// database.ref().update({
+//    stressLevel: 9,
+//    'job/company': 'DocNetwork',
+//    'location/city': 'Detroit'
+// })
+
+// database.ref('isSingle').set(null) // one way to delete in firebase
 
 // database.ref('isSingle').remove().then(() => { // another way to delete in firebase
 //     console.log('Removed worked')
