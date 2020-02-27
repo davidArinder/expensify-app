@@ -2,3 +2,5 @@ node_modules
 src/playground
 # .babelrc
 public/dist/
+.env.test
+.env.development
