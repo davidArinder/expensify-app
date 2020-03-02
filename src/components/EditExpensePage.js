@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ExpenseForm from './ExpenseForm'
-import { editExpense, startRemoveExpense } from '../actions/expenses'
+import { startEditExpense, startRemoveExpense } from '../actions/expenses'
 
 const EditExpensePage = (props) => {
     return (
@@ -9,7 +9,7 @@ const EditExpensePage = (props) => {
             <ExpenseForm /* show the expense form to be edited */
                 expense={props.expense}
                 onSubmit={((expense) => {
-                    props.dispatch(editExpense(props.expense.id, expense)) // dispatches that data with the editExpense action generator
+                    props.dispatch(startEditExpense(props.expense.id, expense)) // dispatches that data with the editExpense action generator
                     props.history.push('/') // sends you back to dashboard page using browser routing (so no page refresh)
                     console.log('updated', expense)
                 })}

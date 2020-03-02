@@ -48,6 +48,15 @@ export const editExpense = (id, updates) => ({
     updates
 })
 
+// dispatch EDIT_EXPENSE to firebase
+export const startEditExpense = (id, updates) => {
+    return (dispatch) => {
+        return database.ref(`expenses/${id}`).update(updates).then(() => {
+            dispatch(editExpense(id, updates))
+        })
+    }
+}
+
 // Set Expenses action generator
 export const setExpenses = (expenses) => ({
     type: 'SET_EXPENSES',
