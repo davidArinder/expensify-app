@@ -17,8 +17,9 @@ const firebaseConfig = {
   firebase.analytics()
 
 const database = firebase.database() // turn the call command into a variable for ease of use
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
 
-export { firebase, database as default }
+export { firebase, googleAuthProvider, database as default }
 
 // REFERENCES BELOW
 // database.ref().on('value', (snapshot) => {
