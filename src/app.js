@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import AppRouter from './routers/AppRouter'
+import AppRouter, { history } from './routers/AppRouter'
 import configureStore from './store/configureStore'
 import { startSetExpenses } from './actions/expenses'
 import { setTextFilter } from './actions/filters'
@@ -18,17 +18,29 @@ const jsx = (
     </Provider>
 )
 
+// render the app
+let hasRendered = false
+const renderApp = () => {
+    if (!hasRendered) {
+        ReactDOM.render(jsx, document.getElementById('app'))
+        hasRendered = true
+    }
+}
+
 ReactDOM.render(<p>Loading...</p>, document.getElementById('app'))
 
-store.dispatch(startSetExpenses()).then(() => {
-    ReactDOM.render(jsx, document.getElementById('app'))
-})
-
 firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        console.log('log in')
+    if (user) { // if the user is logged in
+        // render app with logged in user's expenses
+        store.dispatch(startSetExpenses()).then(() => {
+            renderApp()
+            if (history.location.pathname === '/') { // redirect to dashboard page if on login page
+                history.push('/dashboard')
+            }
+        })
     } else {
-        console.log('log out')
+        renderApp()
+        history.push('/') // if user logs out, bring them to login page
     }
 })
 
