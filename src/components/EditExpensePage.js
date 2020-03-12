@@ -6,19 +6,26 @@ import { startEditExpense, startRemoveExpense } from '../actions/expenses'
 const EditExpensePage = (props) => {
     return (
         <div>
-            <ExpenseForm /* show the expense form to be edited */
-                expense={props.expense}
-                onSubmit={((expense) => {
-                    props.dispatch(startEditExpense(props.expense.id, expense)) // dispatches that data with the editExpense action generator
-                    props.history.push('/') // sends you back to dashboard page using browser routing (so no page refresh)
-                    console.log('updated', expense)
-                })}
-            />
-            <button onClick={() => {
-                // run startRemoveExpense
-                props.dispatch(startRemoveExpense({ id: props.expense.id })) // id as object because it's set as an object on the expense item
-                props.history.push('/')
-            }}>Remove</button>
+            <div className="page-header">
+                <div className="content-container">
+                    <h1 className="page-header__title">Edit Expense</h1>
+                </div>
+            </div>
+            <div className="content-container">
+                <ExpenseForm /* show the expense form to be edited */
+                    expense={props.expense}
+                    onSubmit={((expense) => {
+                        props.dispatch(startEditExpense(props.expense.id, expense)) // dispatches that data with the editExpense action generator
+                        props.history.push('/') // sends you back to dashboard page using browser routing (so no page refresh)
+                        console.log('updated', expense)
+                    })}
+                />
+                <button className="button button--secondary" onClick={() => {
+                    // run startRemoveExpense
+                    props.dispatch(startRemoveExpense({ id: props.expense.id })) // id as object because it's set as an object on the expense item
+                    props.history.push('/')
+                }}>Remove Expense</button>
+            </div>
         </div>
     )
 }
