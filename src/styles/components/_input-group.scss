@@ -1,20 +1,22 @@
 .input-group {
-    display: flex;
-    flex-direction: column; /* for small screens and mobile */
-    margin-bottom: $m-size;
+  display: flex;
+  flex-direction: column; /* for small screens and mobile */
+  margin-bottom: $m-size;
 
-    @media (min-width: $desktop-breakpoint) { /* for large screens */
-        flex-direction: row;
-        margin-bottom: $l-size;
-    }
+  @media (min-width: $desktop-breakpoint) {
+    /* for large screens */
+    flex-direction: row;
+    margin-bottom: $l-size;
+  }
 }
 
 .input-group__item {
-    margin-bottom: $s-size; /* for small screens and mobile */
-    margin-right: $s-size;
+  margin-bottom: $s-size; /* for small screens and mobile */
+  margin-right: $s-size;
 
-    @media (min-width: $desktop-breakpoint) { /* for large screens */
-        margin-right: $s-size;
-        margin: 0 $s-size 0 0;
-    }
+  @media (min-width: $desktop-breakpoint) {
+    /* for large screens */
+    margin-right: $s-size;
+    margin: 0 $s-size 0 0;
+  }
 }
