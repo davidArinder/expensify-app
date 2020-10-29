@@ -41,7 +41,7 @@ export const removeExpense = ({ id } = {}) => ({
 // dispatch REMOVE_EXPENSE to firebase
 export const startRemoveExpense = ({ id } = {}) => {
   return (dispatch, getState) => {
-    const uid = getState().auth.id; // user id
+    const uid = getState().auth.uid; // user id
     return database
       .ref(`users/${uid}/expenses/${id}`)
       .remove()
